@@ -1,0 +1,95 @@
+{% extends 'webzone/base.html' %} {% load static %} {% block content %}
+<section id="about-first" class="bg-light">
+    <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p>
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <iframe height="500" src="{% static 'video/handdetecter.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <iframe height="500" src="{% static 'video/webplayer.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <iframe height="500" src="{% static 'video/portfolio.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about-secand" class="bg-light">
+    <div class="container mt-5">
+        <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p>
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="aboutcard col-sm-8 bg-muted" data-aos="fade-up">
+                <h1 class="text-black">The Marketplace for Private Equity.</h1>
+                <p class="font-weight-light">Are you a digital agency services or software product company looking for a partner in the highly technical and evolving web development space? ColorWhistle will be perfect for you.
+                </p>
+                <p class="font-weight-light">Over the years, we have developed a strategic partnership with many digital agencies in USA, UK and delivered the highest quality of web design, application development, and digital marketing technology services. By creating a B2B partnership
+                    with industry leaders, we have strengthened our ability to offer best-in-class web technology services and solutions.</p>
+                <br>
+                <button class="btn btn-primary btn-lg d-flex justify-content-between mx-auto">Get Started</button>
+            </div>
+            <div class="col-sm-4" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{% static 'image/vk1.png' %}" class="rounded-circle mb-6 mx-auto" style="width: 400px; height: 400px;" height="300" width="300" alt="" loading="lazy" />
+                <p></p>
+            </div>
+        </div>
+</section>
+<section id="about-first" class="bg-light">
+    <p class="text-center fs-1 text-info" data-aos="fade-up">TEAM <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p>
+    <h3 class="text-center text-primary">Our hard working team</h3>
+    <div class="aboutcard card-group">
+        <div class="card">
+            <img src="{% static 'image/pic/35.png' %}" class="rounded-circle mb-6 mx-auto" style="width: 400px; height: 400px;" height="300" width="300" alt="" loading="lazy" />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/pic/about.jpg' %}" class="rounded-circle mb-6 mx-auto" style="width: 400px; height: 400px;" height="300" width="300" alt="" loading="lazy" />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/pic/33.png' %}" class="rounded-circle mb-6 mx-auto" style="width: 400px; height: 400px;" height="300" width="300" alt="" loading="lazy" />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+<br> {% endblock content %}

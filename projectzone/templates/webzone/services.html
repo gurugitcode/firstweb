@@ -1,0 +1,183 @@
+{% extends 'webzone/base.html' %} {% load static %} {% block content %}
+<style>
+    #service-main {
+        background-image: url("{% static 'image/service/test.png' %}");
+        opacity: 50;
+    }
+    
+    #service-main1 {
+        background-image: url("{% static 'image/service/box_img.png' %}");
+    }
+    
+    #service-main2 {
+        background-image: url("{% static 'image/service/service2.png' %}");
+    }
+</style>
+<section id="main-one" class="bg-light">
+    <h2 class="text-center fs-1 text-info" data-aos="fade-up">Full-Cycle Web Development Services</h2>
+</section>
+<section id="service-main" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5 opacity-50">
+        <!-- <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p> -->
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6 bg-muted" data-aos="fade-up">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+            <div class="col-sm-6" data-aos="zoom-out" data-aos-delay="200">
+                <h1 class="text-black">Product Design & Development</h1>
+                <p class="font-weight-light">DESIGN BACKED BY RESEARCH With our proven process and expertise, we design, build, and enhance digital products that are easy to use and increase customer engagement. </p>
+                <p class="font-weight-light">We create seamless interactions and beautifully functional interfaces tailored to your audience needs.</p>
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Service-all">
+    <div class="container-fluid mb-5">
+        <div class="text-center mt-5">
+            <h1>Our Services</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services settings">
+                        <div class="icon"> <img src="https://i.imgur.com/6NKPrhO.png"> </div>
+                        <h4>Settings</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services speedup">
+                        <div class="icon"> <img src="https://i.imgur.com/KMbnpFF.png"> </div>
+                        <h4>Speedup</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services privacy">
+                        <div class="icon"> <img src="https://i.imgur.com/AgyneKA.png"> </div>
+                        <h4>Privacy</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services backups">
+                        <div class="icon"> <img src="https://i.imgur.com/vdH9LKi.png"> </div>
+                        <h4>Backups</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services ssl">
+                        <div class="icon"> <img src="https://i.imgur.com/v6OnUqu.png"> </div>
+                        <h4>SSL secured</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="our-services database">
+                        <div class="icon"> <img src="https://i.imgur.com/VzjZw9M.png"> </div>
+                        <h4>Database</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="service-main1" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5">
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6 bg-muted" data-aos="fade-up">
+                <h1 class="text-black">Article Writing Services</h1>
+                <p class="font-weight-light">Web development services are used to design, build, support, and evolve all types of web-based software. With 2 years in web development, ScienceSoft delivers intuitive and fast websites, web portals, and other web solutions that bring
+                    about digital transformation and enhance business workflows.
+                </p>
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+            </div>
+            <div class="col-sm-6 sear-vi" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="service-main2" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5">
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6  bg-muted" data-aos="fade-up">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+            <div class="col-sm-6" data-aos="zoom-out" data-aos-delay="200">
+                <h1 class="text-black">Growth and Evolution.</h1>
+                <p class="font-weight-light">We continuously advance your web-based software to keep it efficient, competitive on the market, and compliant with all your evolving business needs. Our well-established DevOps culture lets us roll out urgent updates within 1-2 days and
+                    release new, planned functional modules every 2-6 weeks. </p>
+
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="service-main" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5 opacity-50">
+        <!-- <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p> -->
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6" data-aos="zoom-out" data-aos-delay="200">
+                <h1 class="text-black">Web solution engineering</h1>
+                <p class="font-weight-light">ScienceSoft’s experienced web developers deliver websites, web portals, and other web-based solutions, which they complement with custom or platform-based CMSs to simplify administration. Our dedicated Project Management Office establishes
+                    Lean & Agile processes and manages projects of any scale and complexity. </p>
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+            </div>
+            <div class="col-sm-6 bg-muted" data-aos="fade-up">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-main2" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5">
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6  bg-muted" data-aos="fade-up">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+            <div class="col-sm-6" data-aos="zoom-out" data-aos-delay="200">
+                <h1 class="text-black">Quality assurance.</h1>
+                <p class="font-weight-light">ScienceSoft relies on its comprehensive QMS (Quality Management System) confirmed by the ISO 9001 certificate and uses the proprietary IMAAT (Integrated Manual and Automated Testing) approach to ensure that your web solution will function
+                    steadily, securely, and fast. Some of the KPIs we use in QA are: number of test cases and test coverage, known/fixed vulnerabilities, defects found, load time.</p>
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="service-main" class="" style="background-color: rgb(233, 243, 243);">
+    <div class="container mt-5 opacity-50">
+        <!-- <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p> -->
+        <div class="row .bg-info" data-aos="fade-up">
+            <div class="col-sm-6" data-aos="zoom-out" data-aos-delay="200">
+                <h1 class="text-black">24/7 support</h1>
+                <p class="font-weight-light">Providing L1, L2 and L3 support services, we deliver hot-fixes within 24 hours to prevent or resolve any usage, technology, and code issues that may arise. We help you provide high availability and trouble-free functionality of both the
+                    client end and the content management system of your website, web portal, or another kind of web experience. </p>
+                <button class="btn btn-primary btn-sm d-flex justify-content-between mx-auto">Read more</button>
+            </div>
+            <div class="col-sm-6 bg-muted" data-aos="fade-up">
+                <img src="{% static 'image/values-1.png' %}" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,12 @@
+#blog-main .card-group {
+    margin: 25px;
+}
+
+#blog-main .card {
+    border-radius: 30px;
+    margin: 8px;
+}
+
+#blog-main .card:hover {
+    background-color: rgb(164, 202, 189);
+}

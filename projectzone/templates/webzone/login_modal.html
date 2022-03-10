@@ -1,0 +1,104 @@
+{% extends 'webzone/base.html' %} {% load static %} {% block content %}
+<div class="loginbox modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="cardlog modal-content col-12 rounded" style="background-color: hsl(218deg 50% 91%);">
+            <div class="modal-header">
+                <div id="successmsg" class="col-md-12">
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+                <form action="" class="well form-horizontal" method="POST" id="post-form">
+                    {% csrf_token %}
+                    <h5 class="modal-title text-center text-black">User Login</h5>
+                    <br>
+                    <div class="col-auto col-8 mx-auto text-black ">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <!-- <div class="input-group-text">@</div> -->
+                            </div>
+                            <input type="text" class="form-control rounded-pill" id="inlineFormInputGroup" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-auto col-8 mx-auto">
+                        <div class="rounded-pill">
+                            <label class="sr-only" for="inputPassword">Password</label>
+                            <input type="password" class="form-control rounded-pill" id="inputPassword" placeholder="Password" required>
+                        </div>
+                        <br>
+                        <div class="rounded-pill" style="background-color:  rgb(10, 10, 10);">
+                            <input type="submit" name="submit" class="btn btn-sm btn-block text-light" id="btnsave">
+                            <!-- <button type="button" class="btn btn-sm btn-block text-light">Log in</button> -->
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-danger"> Don't have an account? Register </p>
+                <div class="mx-auto">
+                    <a data-toggle="modal" data-target="#create_account" href="#"><span class="text-light">Sign in</span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Submit post on submit
+    $('#post-form').on('submit', function(event) {
+        event.preventDefault();
+        output = "";
+        var username = $("#inlineFormInputGroup").val();
+        console.log(username);
+        var pass = $("#inputPassword").val();
+        console.log(pass);
+        var csr = $("input[name=csrfmiddlewaretoken]").val();
+        console.log(csr);
+        // console.log("form submitted!") // sanity check
+        if (username == "") {
+            console.log("please enter username");
+        } else if (pass == "") {
+            console.log("please enter password");
+        } else {
+            mydata = {
+                username: username,
+                password: pass,
+                csrfmiddlewaretoken: csr
+            };
+            console.log(mydata);
+            $.ajax({
+                url: "{% url 'login' %}",
+                method: "POST",
+                data: mydata,
+                success: function(data) {
+                    console.log(data);
+                    x = data.status;
+                    if (data.status == "Save") {
+                        alert("Form Submitted Successfily", data)
+                        $("#msg").text("Form Submitted Successfily");
+                        $("#msg").show();
+                        $("form")[0].reset();
+                    }
+                    if (data.status == "Faield") {
+                        var data = document.getElementById("successmsg");
+                        data.innerHTML = "<div class='alert success alert-dismissible d-flex align-items-center fade show' role='alert'><i class='bi-check-circle-fill'></i> <strong></strong> User not Validate plz check username & Password. Thank you! <button type='button' id='over' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>"
+                        $('.alert').mousemove('closed.bs.alert', function() {
+                            var data = document.getElementById("successmsg");
+                            data.innerHTML = ""
+                        })
+                        $("#msg").text("Unable to Form Submitted Successfily");
+                        $("#msg").show();
+                        $("form")[0].reset();
+                        // console.log("Unable to save Form");
+                    }
+                }
+            })
+        }
+    });
+</script>
+{% endblock content %}

@@ -1,0 +1,153 @@
+{% extends 'webzone/base.html' %} {% load static %} {% block content %}
+<div id="blogheader" class="footer-copyright text-center py-5 opacity-50" style="background-color:rgb(164, 187, 197)">
+    <div class="container">
+        <h2 class="text-center text-dark" data-aos="fade-up">Web Development Service <span class="text-center fs-5 text-dark">Meet our soldiers</span> </h2>
+
+        <div class="row .bg-info">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto odio neque suscipit quisquam provident voluptate, ratione magnam atque fugiat nemo doloremque. Ipsam reiciendis optio nihil quam maxime, dignissimos inventore culpa ullam minus
+                odio voluptatem tenetur aspernatur natus voluptate suscipit similique cumque repudiandae pariatur iure deserunt sint corrupti commodi? Quibusdam illo magni minima maiores nulla impedit quod accusamus ratione assumenda dolor?</p>
+
+        </div>
+    </div>
+</div>
+<section id="main" class="bg-light">
+    {% if request.user.is_authenticated %}
+    <div id="portfolio-card">
+        <div class="container mt-5">
+            <p class="text-center fs-1 text-info" data-aos="fade-up">Project</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ex odio eum temporibus nihil sint tempore quis quo placeat minima!</p>
+            <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                     
+                       
+                      
+                        <a href="{% url 'Dashboard' %}">Source Code Link</a>
+                       
+                        <img src="{% static 'image/pic/35.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card One</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a href="{% url 'Dashboard' %}">Source Code Link</a> <img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Two</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a href="{% url 'Dashboard' %}">Source Code Link</a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a  href="{% url 'Dashboard' %}">Source Code Link</a> <img src="{% static 'image/pic/about.jpg' %}"> </div>
+                    <div class="content">
+                        <h2>Card One</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a  href="{% url 'Dashboard' %}">Source Code Link</a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a href="{% url 'Dashboard' %}">Source Code Link</a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div id="portfolio-card">
+        <div class="container mt-5">
+            <p class="text-center fs-1 text-info" data-aos="fade-up">Project</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ex odio eum temporibus nihil sint tempore quis quo placeat minima!</p>
+            <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+                <!-- <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                     
+                       
+                      
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a>
+                       
+                        <img src="{% static 'image/pic/35.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card One</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div> -->
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a> <img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Two</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a> <img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Two</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a> <img src="{% static 'image/pic/about.jpg' %}"> </div>
+                    <div class="content">
+                        <h2>Card One</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer text-center'>
+                        <a data-toggle="modal" data-target="#exampleModal" href="{% url 'home' %}"><span class="text-danger">Source Code Link</span></a><img src="{% static 'image/pic/28.png' %}"> </div>
+                    <div class="content">
+                        <h2>Card Three</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</section>
+<div id="blogheader" class="footer-copyright text-center py-5 opacity-50" style="background-color:rgb(164, 187, 197)">
+    <div class="container">
+        <h2 class="text-center text-dark" data-aos="fade-up">Web Development Service <span class="text-center fs-5 text-dark">Meet our soldiers</span> </h2>
+    </div>
+</div>
+{% endblock content %}

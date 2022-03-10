@@ -1,0 +1,30 @@
+.navbar {
+    background: #c9dfe9;
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: #0061fe;
+    transition: 0.4s
+}
+
+.nav-item:hover::after {
+    width: 100%
+}
+
+.nav-link {
+    padding: 25px 5px;
+    transition: 0.2s
+}
+
+nav .btn-outline-secondary {
+    border-radius: 40px;
+}
+
+#social-url #navurl a {
+    text-decoration: none;
+    /* color: rgb(199, 119, 119); */
+}

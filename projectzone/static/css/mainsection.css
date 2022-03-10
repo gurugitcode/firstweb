@@ -1,0 +1,29 @@
+#main {
+    padding: 5px;
+    margin: 0;
+}
+
+#main h1 {
+    /* text-align: center; */
+    margin: 5px;
+}
+
+#main #container-l {
+    float: left;
+    width: 49%;
+    height: 500%;
+    background-color: rgb(204, 218, 223);
+    display: flex;
+    margin: 5px;
+    /* text-align: center; */
+}
+
+#main #container-r {
+    float: right;
+    width: 49%;
+    height: 500%;
+    background-color: rgb(140, 208, 233);
+    display: flex;
+    margin: 5px;
+    /* text-align: center; */
+}

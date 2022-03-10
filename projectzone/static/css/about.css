@@ -1,0 +1,31 @@
+/* .card .ani #animate-text {
+    color: black;
+    font-family: "arial";
+   
+    overflow: hidden;
+    width: 100%;
+    animation: animtext 4s steps(80, end);
+    transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+} */
+
+
+/* 
+@keyframes animtext {
+    from {
+        width: 0;
+        transition: all 2s ease-in-out;
+    }
+} */
+
+#about-first .aboutcard {
+    margin: 25px;
+}
+
+#about-first .aboutcard .card {
+    border-radius: 30px;
+    margin: 8px;
+}
+
+#about-first .aboutcard .card:hover {
+    background-color: rgb(214, 237, 241);
+}

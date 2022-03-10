@@ -1,0 +1,315 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button type="button" class="btn btn-outline-secondary btn-sm rounded-8" data-toggle="modal" data-target="#exampleModal" data-aos="fade-up"> 
+        <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto text-danger" width="35" height="25" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+        </a>
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-black" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" data-aos="fade-up">
+        <!-- end sign up  -->
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'service' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contect' %}">Contact</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Dashboard' %}">Dashboard</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'logout' %}">Logout <span class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li> -->
+
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<!-- Login form Modal -->
+<div class="loginbox modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="cardlog modal-content col-12 rounded" style="background-color: hsl(218deg 50% 91%);">
+            <div class="modal-header">
+                <div id="successmsg" class="col-md-12">
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+                <form action="" class="well form-horizontal" method="POST" id="post-form">
+                    {% csrf_token %}
+                    <h5 class="modal-title text-center text-black">User Login</h5>
+                    <br>
+                    <div class="col-auto col-8 mx-auto text-black ">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <!-- <div class="input-group-text">@</div> -->
+                            </div>
+                            <input type="text" class="form-control rounded-pill" id="inlineFormInputGroup" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-auto col-8 mx-auto">
+                        <div class="rounded-pill">
+                            <label class="sr-only" for="inputPassword">Password</label>
+                            <input type="password" class="form-control rounded-pill" id="inputPassword" placeholder="Password" required>
+                        </div>
+                        <br>
+                        <div class="rounded-pill" style="background-color:  rgb(10, 10, 10);">
+                            <input type="submit" name="submit" class="btn btn-sm btn-block text-light" id="btnsave">
+                            <!-- <button type="button" class="btn btn-sm btn-block text-light">Log in</button> -->
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-danger"> Don't have an account? Register </p>
+                <div class="mx-auto">
+                    <a data-toggle="modal" data-target="#create_account" href="#"><span class="text-light">Sign in</span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- singnup modal start -->
+<div class="loginbox modal fade" id="create_account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="cardlog modal-content col-12 rounded" style="background-color: hsl(218deg 50% 91%);">
+            <div class="modal-header">
+                <div id="succesmsg" class="col-md-12">
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="well form-horizontal" method="POST" id="sign-form">
+                    {% csrf_token %}
+                    <h5 class="modal-title text-center text-black">User Login</h5>
+                    <br>
+                    <div class="col-auto col-8 mx-auto text-black ">
+
+                        <label class="sr-only" for="Username">Username</label>
+                        <div class="input-group mb-2">
+                            <!-- <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                            </div> -->
+                            <input type="text" class="form-control rounded-pill" id="Username" placeholder="Username" required>
+                        </div>
+                        <label class="sr-only" for="Firstname">First Name</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="text" class="form-control rounded-pill" id="Firstname" placeholder="First Name" required>
+                        </div>
+                        <label class="sr-only" for="lastname">Last Name</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="text" class="form-control rounded-pill" id="lastname" placeholder="Last Name" required>
+                        </div>
+                        <label class="sr-only" for="Email">Email</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="email" class="form-control rounded-pill" id="Email" placeholder="Email" required>
+                        </div>
+                        <label class="sr-only" for="Password">Password</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="password" class="form-control rounded-pill" id="Password" placeholder="Password" required>
+                        </div>
+                        <label class="sr-only" for="Password_confirm">Conform Password</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="password" class="form-control rounded-pill" id="Password_confirm" placeholder="Conform Password" required>
+                        </div>
+                        <br>
+                        <div class="rounded-pill" style="background-color:  rgb(10, 10, 10);">
+                            <input type="submit" name="submit" class="btn btn-sm btn-block text-light" id="btnsave">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // Submit post on submit
+    $('#post-form').on('submit', function(event) {
+        event.preventDefault();
+        output = "";
+        var username = $("#inlineFormInputGroup").val();
+        console.log(username);
+        var pass = $("#inputPassword").val();
+        console.log(pass);
+        var csr = $("input[name=csrfmiddlewaretoken]").val();
+        console.log(csr);
+        // console.log("form submitted!") // sanity check
+        if (username == "") {
+            console.log("please enter username");
+        } else if (pass == "") {
+            console.log("please enter password");
+        } else {
+            mydata = {
+                username: username,
+                password: pass,
+                csrfmiddlewaretoken: csr
+            };
+            console.log(mydata);
+            $.ajax({
+                url: "{% url 'login' %}",
+                method: "POST",
+                data: mydata,
+                success: function(data) {
+                   
+                    console.log(data);
+                    x = data.status;
+                    if (data.status == "Save") {
+                        // alert("Form Submitted Successfily", data)
+                        $("#msg").text("Form Submitted Successfily");
+                        $('body').load('/')
+                        window.location.reload();
+                        $("#msg").show();
+                        $("form")[0].reset();
+                    }
+                    if (data.status == "Faield") {
+                        var data = document.getElementById("successmsg");
+                        data.innerHTML = "<div class='alert success alert-dismissible d-flex align-items-center fade show' role='alert'><i class='bi-check-circle-fill'></i> <strong></strong> User not Validate plz check username & Password. Thank you! <button type='button' id='over' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>"
+                        $('.alert').mousemove('closed.bs.alert', function() {
+                            var data = document.getElementById("successmsg");
+                            data.innerHTML = ""
+                        })
+                        $("#msg").text("Unable to Form Submitted Successfily");
+                        $("#msg").show();
+                        $("form")[0].reset();
+                        // console.log("Unable to save Form");
+                    }
+                }
+            })
+        }
+    });
+
+
+    // Rigistrations form Submit post on submit
+    $('#sign-form').on('submit', function(event) {
+        event.preventDefault();
+        output = "";
+        var Username = $("#Username").val();
+        console.log(Username);
+        var Firstname = $("#Firstname").val();
+        console.log(Firstname);
+        var lastname = $("#lastname").val();
+        console.log(lastname);
+        var Email = $("#Email").val();
+        console.log(Email);
+        var Password = $("#Password").val();
+        console.log(Password);
+        var Password_confirm = $("#Password_confirm").val();
+        console.log(Password_confirm);
+        var csr = $("input[name=csrfmiddlewaretoken]").val();
+        console.log(csr);
+        if (Username == "") {
+            console.log("please enter Username");
+        } else if (Firstname == "") {
+            console.log("please enter Firstname");
+        } else if (lastname == "") {
+            console.log("please enter lastname");
+        } else if (Email == "") {
+            console.log("please enter Email");
+        } else if (Password == "") {
+            console.log("please enter password");
+        } else if (Password_confirm == "") {
+            console.log("please enter Password_confirm");
+
+        } else {
+            mydata = {
+                username: Username,
+                first_name: Firstname,
+                last_name: lastname,
+                email: Email,
+                password1: Password,
+                password2: Password_confirm,
+                csrfmiddlewaretoken: csr
+            };
+
+            console.log(mydata);
+            $.ajax({
+                method: "POST",
+                data: mydata,
+                url: "{% url 'sign' %}",
+                success: function(data) {
+                    $("#Username").val(data.username)
+                    $("#Firstname").val(data.first_name);
+                    $("#lastname").val(data.last_name);
+                    $("#Email").val(data.email);
+                    $("#Password").val(data.password1);
+                    $("#Password_confirm").val(data.password2);
+                    console.log("$$$$$$$$$$$$$$$$$$$$data", data);
+                    if (data.status == "Field") {
+                        $("#msg").text("Unable to Form Submitted Successfily");
+                        $("#msg").show();
+                        $("form")[0].reset();
+                        var data = document.getElementById("succesmsg");
+                        data.innerHTML = "<div class='alert success alert-dismissible d-flex align-items-center text-danger fade show' role='alert'><i class='bi-check-circle-fill'></i> <strong></strong>Unable to Form Submitted, Plases check form. field Thank you! <button type='button' id='over' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>"
+                        $('.alert').mousemove('closed.bs.alert', function() {
+                            var data = document.getElementById("succesmsg");
+                            data.innerHTML = ""
+                        })
+                    }
+                    x = data.status;
+                    if (data.status == "Save") {
+                        $("#msg").text("Form Submitted Successfily");
+                        // window.location.reload();
+                        $("#msg").show();
+                        var data = document.getElementById("succesmsg");
+                        data.innerHTML = "<div class='alert success alert-dismissible d-flex align-items-center fade show' role='alert'><i class='bi-check-circle-fill'></i> <strong></strong> Congratulations Your account created. Thank you! <button type='button' id='over' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>"
+                        $('.alert').mousemove('closed.bs.alert', function() {
+                            var data = document.getElementById("succesmsg");
+                            data.innerHTML = ""
+                        })
+                        $("form")[0].reset();
+                    }
+                    if (data == "Field") {
+                        alert('Ragitration Form Not Submitted')
+                        $("#msg").text("Unable to Form Submitted Successfily");
+                        $("#msg").show();
+                        $("form")[0].reset();
+                        console.log("Unable to save Form");
+                    }
+                }
+            })
+        }
+    });
+</script>
