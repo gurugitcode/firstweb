@@ -1,4 +1,148 @@
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    /* body{
+overflow-x: hidden;
+font-family: Roboto, sans-serif;
+} */
+    
+    h1 {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+    
+    .video-container {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+    }
+    
+    #text {
+        position: absolute;
+        color: #FFFFFF;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    @media (min-aspect-ratio: 16/9) {
+        .video-container iframe {
+            height: 56.25vw;
+        }
+    }
+    
+    @media (max-aspect-ratio: 16/9) {
+        .video-container iframe {
+            width: 177.78vh;
+        }
+    }
+    /* DO NOT COPY. NOT PART OF THE EXAMPLE */
+    
+    .read-article {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        color: #000;
+        background: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: arial;
+        text-decoration: none;
+        box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+    }
+    
+    .read-article:hover {
+        background: #d5d5d5;
+        box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+    }
+    
+    iframe[sandbox] .read-article {
+        display: none;
+    }
+</style>
+
+
 {% extends 'webzone/base.html' %} {% load static %} {% block content %}
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    /* body{
+overflow-x: hidden;
+font-family: Roboto, sans-serif;
+} */
+    
+    .aboutmain h1 {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+    
+    .aboutmain .video-container {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .aboutmain iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+    }
+    
+    .aboutmain #text {
+        position: absolute;
+        color: #FFFFFF;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    @media (min-aspect-ratio: 16/9) {
+        .video-container iframe {
+            height: 56.25vw;
+        }
+    }
+    
+    @media (max-aspect-ratio: 16/9) {
+        .video-container iframe {
+            width: 177.78vh;
+        }
+    }
+    /* DO NOT COPY. NOT PART OF THE EXAMPLE */
+    
+    .read-article {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        color: #000;
+        background: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: arial;
+        text-decoration: none;
+        box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+    }
+    
+    .read-article:hover {
+        background: #d5d5d5;
+        box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+    }
+    
+    iframe[sandbox] .read-article {
+        display: none;
+    }
+</style>
+
+
 <section id="about-first" class="bg-light">
     <p class="text-center fs-1 text-info" data-aos="fade-up">Our Captains <span class="text-center fs-5 text-dark">Meet our soldiers</span> </p>
     <div class="bd-example">
@@ -8,26 +152,32 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="aboutmain carousel-inner">
                 <div class="carousel-item active">
-                    <iframe height="500" src="{% static 'video/handdetecter.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/uHu3ECMLpyI?controls=0&autoplay=1&mute=1"></iframe>
+                    </div>
+
+                    <div id="text">
+                        <h1>Use a youtube video as a full screen background with CSS</h1>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <iframe height="500" src="{% static 'video/webplayer.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/uHu3ECMLpyI?controls=0&autoplay=1&mute=1"></iframe>
+                    </div>
+
+                    <div id="text">
+                        <h1>Use a youtube video as a full screen background with CSS</h1>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <iframe height="500" src="{% static 'video/portfolio.mp4' %}" class="d-block w-100" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Yj2iELI6OeI?controls=0&autoplay=1&mute=1"></iframe>
+                    </div>
+
+                    <div id="text">
+                        <h1>Use a youtube video as a full screen background with CSS</h1>
                     </div>
                 </div>
             </div>
